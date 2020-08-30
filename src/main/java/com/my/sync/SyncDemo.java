@@ -14,6 +14,8 @@ public class SyncDemo {
     public static void main(String[] args) {
         Object object = new Object();
         System.out.println(ClassLayout.parseInstance(object).toPrintable());
+//        0     4        (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)
+//        4     4        (object header)                           00 00 00 00 (00000000 00000000 00000000 00000000) (0)
 //        unused:1 | age:4 | biased_lock:1 | lock:2
 //         01 00 00 00 (00000001 00000000 00000000 00000000) (1)
 
