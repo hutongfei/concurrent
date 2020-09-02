@@ -12,6 +12,7 @@ import org.openjdk.jol.info.ClassLayout;
 public class SyncDemo {
 
     public static void main(String[] args) {
+
         Object object = new Object();
         System.out.println(ClassLayout.parseInstance(object).toPrintable());
 //        0     4        (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)

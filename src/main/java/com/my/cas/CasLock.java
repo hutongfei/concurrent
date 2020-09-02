@@ -43,8 +43,10 @@ public class CasLock implements Lock {
             new Thread(() -> {
                 for (int i = 0; i < 100; i++) {
                     while (!casLock.lock()) {
-
+                        System.out.println(Thread.currentThread().getName() + " yielding");
+                        Thread.yield();
                     }
+//                    System.out.println(Thread.currentThread().getName() + "running");
                     count++;
                     casLock.unLock();
                 }
