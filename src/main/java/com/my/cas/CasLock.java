@@ -3,7 +3,11 @@ package com.my.cas;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
+import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * version1
+ */
 public class CasLock implements Lock {
 
     private volatile long state = 0;
@@ -36,6 +40,9 @@ public class CasLock implements Lock {
     static int count = 0;
 
     public static void main(String[] args) {
+
+        ReentrantLock reentrantLock = new ReentrantLock();
+        reentrantLock.lock();
 
         CasLock casLock = new CasLock();
 
